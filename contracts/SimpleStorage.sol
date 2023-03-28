@@ -22,6 +22,10 @@ contract SimpleStorage {
         return favoriteNumber;
     }
 
+    function retrieveByPerson(string memory _name) public view returns (uint256) {
+        return nameToFavoriteNumber[_name];
+    }
+
     //calldata, memory, storage are 3 of 6 places the EVM can store data. Storage is lasting type
     //need to be explicit about the type of arrays
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
